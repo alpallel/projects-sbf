@@ -19,7 +19,7 @@ def update(self, instance, validated_data):
 class ItemsSerializer(serializers.Serializer):
     item_id = serializers.IntegerField(read_only=True)
     item_name = serializers.CharField(max_length=100)
-    item_description = serializers.TextFCharField()
+    item_description = serializers.CharField()
     price = serializers.IntegerField()
     stock = serializers.IntegerField()
     seller = UserSerializer(many=False, read_only=True)
@@ -33,3 +33,5 @@ def update(self, instance, validated_data):
     instance.price = validated_data.get("price", instance.price)
     instance.stock = validated_data.get("price", instance.stock)
     return instance
+
+# TODO: add cart serializer
