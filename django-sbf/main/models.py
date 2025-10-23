@@ -22,7 +22,6 @@ class Items(models.Model):
     # stock = models.IntegerField() # OPT
     # seller = models.ForeignKey(to=User, on_delete=models.CASCADE) # OPT
 
-
 class Cart(models.Model):
     user = models.OneToOneField(to=User, on_delete=models.CASCADE)
     items = models.ManyToManyField(to=Items)

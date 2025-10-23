@@ -35,6 +35,7 @@ def update(self, instance, validated_data):
     instance.item_description = validated_data.get("item_description", instance.item_description)
     instance.price = validated_data.get("price", instance.price)
     # instance.stock = validated_data.get("stock", instance.stock) # OPT
+    instance.save()
     return instance
 
 # TODO: add cart serializer
